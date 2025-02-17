@@ -163,3 +163,22 @@ body {
     content: '100%';
   }
 }
+
+.sub-loader {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background: #4e75ff;
+  font: 500 16px / 1.5 "Montserrat", sans-serif;
+  letter-spacing: 0.04em;
+  color: #fff;
+  display: block; /* робимо кнопку блоковим елементом */
+  margin: 0 auto; /* відцентровуємо кнопку */
+  margin-top: 32px;
+}
+
+.sub-loader.hidden {
+  display: none;
+}
