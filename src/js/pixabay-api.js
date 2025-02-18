@@ -13,7 +13,7 @@ export const fetchImages = async (searchQuery, page = 1) => {
         orientation: 'horizontal',
         safesearch: true,
         page: page,
-        per_page: 9,
+        per_page: 40,  // 40 images per page
       },
     });
 

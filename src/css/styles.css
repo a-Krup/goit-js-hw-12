@@ -34,7 +34,6 @@ body {
   color: #fff;
 }
 
-/* Контейнер для галереї */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -68,6 +67,7 @@ body {
   padding: 4px 20px;
 }
 
+
 .gallery .stat-item {
   display: flex;
   flex-direction: column;
@@ -76,12 +76,14 @@ body {
   gap: 4px;
 }
 
+
 .gallery .stat-item .label {
   font: 600 12px / 1.33333 'Montserrat', sans-serif;
   letter-spacing: 0.04em;
   color: #2e2f42;
   margin: 0;
 }
+
 
 .gallery .stat-item .value {
   font: 400 12px / 1.5 'Montserrat', sans-serif;
@@ -99,11 +101,14 @@ body {
   color: #2e2f42;
   flex-direction: column;
   gap: 8px;
+  margin-top: 12px;
 }
+
 
 .loader.hidden {
   display: none;
 }
+
 
 .loading {
   display: block;
@@ -116,6 +121,7 @@ body {
   overflow: hidden;
 }
 
+
 .loading::before {
   content: '';
   background: red;
@@ -126,6 +132,7 @@ body {
   height: 100%;
   animation: loading 2s linear infinite;
 }
+
 
 .loading:after {
   content: '';
@@ -139,9 +146,8 @@ body {
   line-height: 32px;
   color: rgb(0, 255, 255);
   mix-blend-mode: difference;
-  animation: percentage 2s linear infinite;
+  animation: percentage 3s linear infinite;
 }
-
 @keyframes loading {
   0% {
     width: 0;
@@ -151,10 +157,12 @@ body {
   }
 }
 
+
 @keyframes percentage {
   0% {
     content: '0%';
   }
+
 
   50% {
     content: '50%';
@@ -163,6 +171,7 @@ body {
     content: '100%';
   }
 }
+
 
 .sub-loader {
   border: none;
@@ -174,11 +183,45 @@ body {
   font: 500 16px / 1.5 "Montserrat", sans-serif;
   letter-spacing: 0.04em;
   color: #fff;
-  display: block; /* робимо кнопку блоковим елементом */
-  margin: 0 auto; /* відцентровуємо кнопку */
+  display: block;
+  margin: 0 auto;
   margin-top: 32px;
+  margin-bottom: 12px;
 }
 
 .sub-loader.hidden {
   display: none;
 }
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 400 16px / 1.5 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.end-message {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.end-message.msg {
+  display: none;
+}*./

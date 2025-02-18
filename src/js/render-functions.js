@@ -12,18 +12,6 @@ export const toggleLoadingIndicator = isLoading => {
 
 export const renderImages = images => {
   const gallery = document.querySelector('.gallery');
-  gallery.innerHTML = '';
-
-  if (images.length === 0) {
-    iziToast.error({
-      message: 'Sorry, no images match your search. Please try again!',
-      position: 'topRight',
-      timeout: 5000,
-      transitionIn: 'fadeIn',
-      transitionOut: 'fadeOut',
-    });
-    return;
-  }
 
   const markup = images
     .map(
