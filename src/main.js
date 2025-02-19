@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!searchQuery) {
       iziToast.error({
-        message: 'Please enter a search term.',
+        message: 'Sorry, no images match your search. Please try again!',
         position: 'topRight',
         timeout: 2000,
       });
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (images.length === 0) {
         iziToast.error({
-          message: 'No images found, please try another search.',
+          message: 'Sorry, no images match your search. Please try again!',
           position: 'topRight',
           timeout: 2000,
         });
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollToNewImages();
     } catch (error) {
       iziToast.error({
-        message: 'Something went wrong, please try again later.',
+        message: 'Sorry, no images match your search. Please try again!',
         position: 'topRight',
         timeout: 2000,
       });
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollToNewImages();
     } catch (error) {
       iziToast.error({
-        message: 'Something went wrong, please try again later.',
+        message: 'Sorry, no images match your search. Please try again!',
         position: 'topRight',
         timeout: 2000,
       });
