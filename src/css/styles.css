@@ -67,7 +67,6 @@ body {
   padding: 4px 20px;
 }
 
-
 .gallery .stat-item {
   display: flex;
   flex-direction: column;
@@ -76,14 +75,12 @@ body {
   gap: 4px;
 }
 
-
 .gallery .stat-item .label {
   font: 600 12px / 1.33333 'Montserrat', sans-serif;
   letter-spacing: 0.04em;
   color: #2e2f42;
   margin: 0;
 }
-
 
 .gallery .stat-item .value {
   font: 400 12px / 1.5 'Montserrat', sans-serif;
@@ -104,11 +101,9 @@ body {
   margin-top: 12px;
 }
 
-
 .loader.hidden {
   display: none;
 }
-
 
 .loading {
   display: block;
@@ -121,7 +116,6 @@ body {
   overflow: hidden;
 }
 
-
 .loading::before {
   content: '';
   background: red;
@@ -132,7 +126,6 @@ body {
   height: 100%;
   animation: loading 2s linear infinite;
 }
-
 
 .loading:after {
   content: '';
@@ -148,6 +141,7 @@ body {
   mix-blend-mode: difference;
   animation: percentage 3s linear infinite;
 }
+
 @keyframes loading {
   0% {
     width: 0;
@@ -157,21 +151,19 @@ body {
   }
 }
 
-
 @keyframes percentage {
   0% {
     content: '0%';
   }
 
-
   50% {
     content: '50%';
   }
+
   100% {
     content: '100%';
   }
 }
-
 
 .sub-loader {
   border: none;
@@ -180,36 +172,21 @@ body {
   width: 125px;
   height: 40px;
   background: #4e75ff;
-  font: 500 16px / 1.5 "Montserrat", sans-serif;
+  font: 500 16px / 1.5 'Montserrat', sans-serif;
   letter-spacing: 0.04em;
   color: #fff;
   display: block;
   margin: 0 auto;
   margin-top: 32px;
-  margin-bottom: 12px;
+  margin-bottom: 48px;
 }
 
 .sub-loader.hidden {
   display: none;
 }
 
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: 400 16px / 1.5 'Montserrat', sans-serif;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.loader.hidden {
-  display: none;
-}
-
 .end-message {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -218,11 +195,9 @@ body {
   margin-top: 32px;
   margin-bottom: 32px;
   display: none;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
-/*.end-message.msg {
-  display: none;
+.end-message:not(.hidden) {
+  display: block; 
 }
-  */
