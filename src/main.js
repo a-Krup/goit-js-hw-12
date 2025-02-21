@@ -33,8 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
       iziToast.error({
         message: 'Sorry, no images match your search. Please try again!',
         position: 'topRight',
-        timeout: 2000,
+        timeout: 5000,
       });
+      toggleLoadingIndicator(false);
       return;
     }
 
@@ -43,24 +44,25 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMoreBtn.classList.add('hidden');
     endMessage.classList.add('hidden');
     searchBtn.disabled = true;
+
     toggleLoadingIndicator(true);
 
     try {
       const response = await fetchImages(searchQuery, page);
       totalHits = response.totalHits;
-
       const images = response.hits;
 
       if (images.length === 0) {
         iziToast.error({
           message: 'Sorry, no images match your search. Please try again!',
           position: 'topRight',
-          timeout: 2000,
+          timeout: 3000,
         });
+        toggleLoadingIndicator(false);
         return;
       }
 
-      await delay(2000);
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       renderImages(images);
       const lightbox = new SimpleLightbox('.gallery a');
@@ -75,17 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
           "We're sorry, but you've reached the end of search results.";
       }
 
-      setTimeout(() => {
-        toggleLoadingIndicator(false);
-        searchBtn.disabled = false;
-      }, 500);
-
       scrollToNewImages();
     } catch (error) {
       iziToast.error({
         message: 'Sorry, no images match your search. Please try again!',
         position: 'topRight',
-        timeout: 2000,
+        timeout: 3000,
       });
     } finally {
       toggleLoadingIndicator(false);
@@ -98,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleLoadingIndicator(true);
     loadMoreBtn.classList.add('hidden');
 
-    await delay(2000);
-
     try {
       const response = await fetchImages(searchQuery, page);
       const images = response.hits;
@@ -111,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
           "We're sorry, but you've reached the end of search results.";
         return;
       }
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       renderImages(images);
       const lightbox = new SimpleLightbox('.gallery a');
@@ -130,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       iziToast.error({
         message: 'Sorry, no images match your search. Please try again!',
         position: 'topRight',
-        timeout: 2000,
+        timeout: 3000,
       });
     } finally {
       toggleLoadingIndicator(false);
@@ -145,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const itemHeight = lastItem.getBoundingClientRect().top;
         if (itemHeight > 0) {
           window.scrollBy({
-            top: itemHeight,
+            top: itemHeight * 2,
             left: 0,
             behavior: 'smooth',
           });

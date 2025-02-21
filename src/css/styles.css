@@ -124,7 +124,7 @@ body {
   top: 0;
   width: 0;
   height: 100%;
-  animation: loading 2s linear infinite;
+  animation: loading 1s linear infinite;
 }
 
 .loading:after {
@@ -139,7 +139,7 @@ body {
   line-height: 32px;
   color: rgb(0, 255, 255);
   mix-blend-mode: difference;
-  animation: percentage 3s linear infinite;
+  animation: percentage 1s linear infinite;
 }
 
 @keyframes loading {
@@ -199,5 +199,5 @@ body {
 }
 
 .end-message:not(.hidden) {
-  display: block; 
+  display: block;
 }
