@@ -137,17 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function scrollToNewImages() {
     const galleryItems = document.querySelectorAll('.gallery li');
     if (galleryItems.length > 0) {
-      const lastItem = galleryItems[galleryItems.length - 1];
-      if (lastItem) {
-        const itemHeight = lastItem.getBoundingClientRect().top;
-        if (itemHeight > 0) {
-          window.scrollBy({
-            top: itemHeight * 2,
-            left: 0,
-            behavior: 'smooth',
-          });
-        }
-      }
+      const itemHeight = galleryItems[0].offsetHeight;
+
+      window.scrollBy({
+        top: itemHeight * 2,
+        left: 0,
+        behavior: 'smooth',
+      });
     }
   }
 });
